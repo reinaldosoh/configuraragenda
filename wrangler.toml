@@ -6,6 +6,20 @@ compatibility_date = "2025-04-12"
 [site]
 bucket = "./dist"
 
+# Configuração para SPA (Single Page Application)
+# Isso garante que todas as rotas sejam redirecionadas para o index.html
+[site.build]
+command = "npm run build"
+
+# Configuração de rotas para SPA
+[[routes]]
+pattern = "*"
+script = "index.js"
+
+# Configuração para lidar com rotas do React Router
+[env.production]
+ROUTES = "/*"
+
 # Configuração para Workers Sites
 [build]
 command = "npm run build"
