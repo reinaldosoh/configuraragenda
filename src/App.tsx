@@ -10,7 +10,11 @@ function App(): JSX.Element {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={
+        {/* Redirecionar a rota raiz para /agendamento */}
+        <Route path="/" element={<Navigate to="/agendamento" replace />} />
+        
+        {/* Antiga página inicial, agora acessível via /home */}
+        <Route path="/home" element={
           <Layout>
             <Home />
           </Layout>
@@ -35,8 +39,8 @@ function App(): JSX.Element {
           </Layout>
         } />
         
-        {/* Redirecionar rotas não encontradas para a página inicial */}
-        <Route path="*" element={<Navigate to="/" replace />} />
+        {/* Redirecionar rotas não encontradas para /agendamento */}
+        <Route path="*" element={<Navigate to="/agendamento" replace />} />
       </Routes>
     </Router>
   );
