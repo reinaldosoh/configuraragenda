@@ -1,17 +1,14 @@
-/**
- * Manipulador de requisições para Cloudflare Pages Functions
- * 
- * Configuração simplificada para aplicação SPA no Cloudflare Pages
- */
-
-export function onRequest(context) {
-  const url = new URL(context.request.url);
+// Manipulador simples para todas as requisições
+export function onRequest({ request, next }) {
+  // Obter a URL da requisição
+  const url = new URL(request.url);
   
-  // Se a rota não for um arquivo estático, servir o index.html
-  if (!url.pathname.includes('.')) {
-    return context.env.ASSETS.fetch('/index.html', context.request);
+  // Se for um arquivo estático, passar para o próximo handler
+  if (url.pathname.includes('.')) {
+    return next();
   }
   
-  // Para arquivos estáticos, deixar o Cloudflare Pages lidar
-  return context.next();
+  // Para todas as outras rotas, redirecionar para a mesma URL mas com index.html
+  const newUrl = new URL('/index.html', url.origin);
+  return Response.redirect(newUrl.toString(), 302);
 }
