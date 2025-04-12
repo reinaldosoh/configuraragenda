@@ -8,8 +8,8 @@ import Button from '../ui/button';
  */
 function Home(): JSX.Element {
   return (
-    <div className="max-w-md mx-auto p-4">
-      <Card className="text-center p-6">
+    <div className="max-w-md mx-auto p-4 bg-red-200">
+      <Card className="text-center p-6 border-2 border-blue-500">
         <h1 className="text-2xl font-bold mb-6 text-gray-800">Bem-vindo ao Consultório Médico</h1>
         
         <p className="text-gray-600 mb-8">
