@@ -1,9 +1,12 @@
 name = "agenda-iprevenir"
 compatibility_date = "2025-04-12"
 
-# Configuração para sites estáticos
+# Configuração para Cloudflare Pages
 [site]
 bucket = "./dist"
+
+# Diretório de saída para Cloudflare Pages
+pages_build_output_dir = "dist"
 
 # Configuração para Pages Functions
 [build]

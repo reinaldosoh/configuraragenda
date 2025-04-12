@@ -1,7 +1,5 @@
 {
   "name": "agendaiprevenir",
   "compatibility_date": "2025-04-12",
-  "assets": {
-    "directory": "./dist"
-  }
+  "pages_build_output_dir": "dist"
 }
