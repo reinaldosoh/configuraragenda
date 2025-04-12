@@ -1,18 +1,6 @@
 name = "agenda-iprevenir"
 compatibility_date = "2025-04-12"
 
-# Configuração para sites estáticos com Pages Functions
+# Configuração para sites estáticos
 [site]
 bucket = "./dist"
-
-# Configuração para Pages Functions
-[build]
-command = "npm run build"
-
-[functions]
-directory = "./functions"
-
-# Configuração de rotas para SPA
-[[routes]]
-pattern = "/*"
-script = "[[path]].js"
