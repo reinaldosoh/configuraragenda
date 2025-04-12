@@ -1,7 +1,18 @@
 name = "agenda-iprevenir"
 compatibility_date = "2025-04-12"
-main = "./src/worker.js"
 
-# Configuração para sites estáticos
+# Configuração para sites estáticos com Pages Functions
 [site]
 bucket = "./dist"
+
+# Configuração para Pages Functions
+[build]
+command = "npm run build"
+
+[functions]
+directory = "./functions"
+
+# Configuração de rotas para SPA
+[[routes]]
+pattern = "/*"
+script = "[[path]].js"
