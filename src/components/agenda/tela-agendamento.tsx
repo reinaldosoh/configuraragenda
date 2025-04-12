@@ -403,12 +403,7 @@ function TelaAgendamento(): JSX.Element {
         </Button>
       )}
       
-      {!usuarioParams && (
-        <div className="bg-yellow-100 border border-yellow-400 text-yellow-700 px-4 py-3 rounded mt-4" role="alert">
-          <p className="font-medium">Aviso:</p>
-          <p>Você precisa acessar esta página através do aplicativo para poder agendar consultas.</p>
-        </div>
-      )}
+      {/* Aviso removido */}
       
       {/* Alerta customizado */}
       <AlertDialog
